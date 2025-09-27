@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head> <
+  meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sürdürülebilir Moda Platformu</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #e8f5e9 0%, #f3e5f5 100%);
+      color: #222;
+    }
+    header {
+      background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+      color: #fff;
+      padding: 2.5rem 1rem 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(67,206,162,0.12);
+      border-bottom-left-radius: 32px;
+      border-bottom-right-radius: 32px;
+    }
+    nav {
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(67,206,162,0.08);
+      border-radius: 0 0 16px 16px;
+      margin-bottom: 1.5rem;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0.5rem 0;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+    nav li {
+      margin: 0 1.2rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: #185a9d;
+      font-weight: 600;
+      font-size: 1.08rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav a:hover {
+      background: #43cea2;
+      color: #fff;
+    }
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(67,206,162,0.10);
+      padding: 2.2rem 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    h2 {
+      color: #185a9d;
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
+      letter-spacing: 1px;
+    }
+    .video {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .istatistik {
+      font-size: 1.25rem;
+      color: #b22222;
+      text-align: center;
+      margin-bottom: 2rem;
+      background: #fbe9e7;
+      border-radius: 8px;
+      padding: 0.7rem;
+      box-shadow: 0 2px 8px rgba(178,34,34,0.07);
+    }
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: #185a9d;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.6rem;
+      border: 1px solid #bdbdbd;
+      border-radius: 6px;
+      font-size: 1rem;
+      background: #f5f5f5;
+      transition: border 0.2s;
+    }
+    input:focus, textarea:focus {
+      border: 1.5px solid #43cea2;
+      outline: none;
+    }
+    button {
+      background: linear-gradient(90deg, #43cea2 0%, #185a9d 100%);
+      color: #fff;
+      border: none;
+      padding: 0.8rem 1.7rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1.08rem;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(67,206,162,0.10);
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: linear-gradient(90deg, #185a9d 0%, #43cea2 100%);
+    }
+    .map {
+      width: 100%;
+      height: 300px;
+      background: linear-gradient(135deg, #e0f7fa 0%, #f3e5f5 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      margin-bottom: 1.2rem;
+      border-radius: 12px;
+      font-size: 1.15rem;
+      box-shadow: 0 2px 8px rgba(67,206,162,0.07);
+    }
+    .accordion {
+      margin-top: 1.2rem;
+    }
+    .accordion-item {
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(67,206,162,0.07);
+      background: #f8f8ff;
+      overflow: hidden;
+    }
+    .accordion-title {
+      width: 100%;
+      text-align: left;
+      background: #43cea2;
+      color: #fff;
+      border: none;
+      padding: 1rem 1.2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      border-radius: 8px 8px 0 0;
+    }
+    .accordion-title:hover {
+      background: #185a9d;
+    }
+    .accordion-content {
+      padding: 1rem 1.2rem;
+      background: #fff;
+      border-radius: 0 0 8px 8px;
+      animation: fadeIn 0.3s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.5rem;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(67,206,162,0.07);
+    }
+    th, td {
+      padding: 0.7rem 0.5rem;
+      border-bottom: 1px solid #e0e0e0;
+      text-align: left;
+      font-size: 1rem;
+    }
+    th {
+      background: #e3f2fd;
+      color: #185a9d;
+      font-weight: 600;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    @media (max-width: 700px) {
+      section { padding: 1rem; }
+      .accordion-title, .accordion-content { padding: 0.7rem 0.5rem; }
+      th, td { font-size: 0.95rem; padding: 0.5rem 0.3rem; }
+      nav ul { flex-direction: column; }
+      nav li { margin: 0.5rem 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sürdürülebilir Moda Platformu</h1>
+    <p>Tekstil atıklarını azaltmak ve sürdürülebilir modayı yaygınlaştırmak için bir aradayız.</p>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#anasayfa">Anasayfa</a></li>
+      <li><a href="#bilgi">Bilgi Merkezi</a></li>
+      <li><a href="#donustur">Dönüştür & Bağışla</a></li>
+      <li><a href="#rehber">Sürdürülebilir Moda Rehberi</a></li>
+    </ul>
+  </nav>
+
+  <section id="anasayfa">
+    <h2>Anasayfa</h2>
+    <div class="video">
+  <p><strong>Giyim sektöründe israf | Satılamayan kıyafetlere ne oluyor?</strong></p>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/pE-aoyPA4dM" title="Giyim sektöründe israf" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="istatistik">
+      <p>Her yıl <strong>92 milyon ton</strong> tekstil atığı oluşuyor.</p>
+    </div>
+  </section>
+  <section id="iletisim" style="max-width:900px;margin:2rem auto 0 auto;background:#fff;border-radius:18px;box-shadow:0 4px 24px rgba(67,206,162,0.10);padding:2.2rem 1.5rem;">
+    <h2 style="color:#185a9d;font-size:2rem;margin-bottom:1.2rem;letter-spacing:1px;">Bizimle İletişime Geçin</h2>
+    <div style="margin-bottom:1.2rem;">
+      <p>Her türlü soru, öneri veya iş birliği için bize ulaşabilirsiniz:</p>
+      <ul style="margin:0.7rem 0 1.2rem 0;padding:0;list-style:none;">
+        <li><strong>E-posta:</strong> <a href="mailto:info@modageridonusum.com" style="color:#185a9d;text-decoration:underline;">info@modageridonusum.com</a></li>
+        <li><strong>Telefon:</strong> <a href="tel:+902123456789" style="color:#185a9d;text-decoration:underline;">+90 212 345 67 89</a></li>
+        <li><strong>Adres:</strong> Moda Geri Dönüşüm Merkezi, İstanbul</li>
+      </ul>
+    </div>
+    <div style="width:100%;height:320px;background:#e0f7fa;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#888;font-size:1.15rem;box-shadow:0 2px 8px rgba(67,206,162,0.07);margin-bottom:1.2rem;">
+      <iframe src="https://www.google.com/maps?q=Moda+Geri+Dönüşüm+Merkezi,+İstanbul&output=embed" width="100%" height="100%" style="border:0;border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+  <footer style="background:#185a9d;color:#fff;text-align:center;padding:2rem 1rem;margin-top:2rem;border-top-left-radius:32px;border-top-right-radius:32px;box-shadow:0 -4px 16px rgba(67,206,162,0.10);">
+    <p style="margin:0;font-size:1.08rem;">&copy; 2025 Moda Geri Dönüşüm Platformu. Tüm hakları saklıdır.</p>
+    <p style="margin:0.5rem 0 0 0;font-size:0.95rem;">Sürdürülebilir bir gelecek için birlikte çalışıyoruz.</p>
+  </footer>
+<script>
+  // Bilgi Merkezi akordeon aç/kapa fonksiyonu
+  document.querySelectorAll('#bilgi .accordion-title').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const content = this.nextElementSibling;
+      if (content.style.display === 'block') {
+        content.style.display = 'none';
+      } else {
+        content.style.display = 'block';
+      }
+    });
+  });
+</script>
+
+
+  <section id="bilgi">
+    <h2>Bilgi Merkezi</h2>
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-title">1. Neden Tekstil Atığı Tehlikelidir?</button>
+        <div class="accordion-content" style="display:none;">
+          <p><strong>Kısaca:</strong> Çünkü doğaya zararlı kimyasallar bırakır, çok yavaş çözünür, enerji ve su israfı yaratır, ve çoğu zaman yakılarak bertaraf edilir — bu da hava kirliliği yaratır.</p>
+          <p><strong>Detaylı Sebepler:</strong></p>
+          <ul>
+            <li><strong>🔴 1.1. Çürümesi Yüzlerce Yıl Sürebilir</strong><br>Sentetik kumaşlar (polyester, naylon, akrilik): 200+ yıl<br>Doğal kumaşlar (pamuk, yün): Çabuk çürür ama boyalar ve kimyasallar doğaya karışabilir</li>
+            <li><strong>🔴 1.2. Mikroplastik Salınımı</strong><br>Sentetik kumaşlardan çıkan mikrofiberler denizlere, balıklara ve nihayet bize ulaşır<br>Özellikle polyester içeren kıyafetlerin yıkanması sırasında bu parçacıklar ortaya çıkar</li>
+            <li><strong>🔴 1.3. Toksik Kimyasallar ve Boyalar</strong><br>Ucuz üretim yapılan kıyafetlerde azo boyalar, ağır metaller (kurşun, kadmiyum) kullanılabiliyor<br>Bu kimyasallar toprak ve suya karışarak canlılara zarar verir</li>
+            <li><strong>🔴 1.4. Enerji & Su İsrafı</strong><br>1 kot pantolon üretimi ≈ 7.500 litre su<br>Bu, bir insanın yaklaşık 10 yıl boyunca içeceği su miktarına eşdeğer!</li>
+            <li><strong>🔴 1.5. Depolama ve Yakma Sorunları</strong><br>Geri dönüşmeyen kıyafetler çöplere ya da yakma tesislerine gider<br>Yakıldığında: karbondioksit + zehirli gazlar ortaya çıkar → küresel ısınma artar</li>
+          </ul>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-title">2. Organik Pamuk vs Sentetik Kumaş: Farkları Nedir?</button>
+        <div class="accordion-content" style="display:none;">
+          <h4>🧵 Organik Pamuk Nedir?</h4>
+          <ul>
+            <li>✔️ GDO’suz tohumlarla, pestisit kullanılmadan yetiştirilen pamuktur</li>
+            <li>✔️ Toprak sağlığını korur, çiftçiye zarar vermez</li>
+            <li>✔️ GOTS gibi sertifikalarla izlenebilir</li>
+          </ul>
+          <strong>Avantajları:</strong>
+          <ul>
+            <li>Cilt dostu, alerji yapmaz</li>
+            <li>Doğada çözünebilir</li>
+            <li>Üretimi sırasında daha az su tüketilir (geleneksel pamuğa göre)</li>
+          </ul>
+          <strong>Dezavantajları:</strong>
+          <ul>
+            <li>Üretimi daha pahalıdır</li>
+            <li>Kısa vadede üretim miktarı daha düşüktür</li>
+          </ul>
+          <h4>🧪 Sentetik Kumaşlar Nedir? (Polyester, Naylon, Akrilik)</h4>
+          <ul>
+            <li>✔️ Petrol türevi malzemelerden üretilir</li>
+            <li>✔️ Dayanıklıdır, ucuzdur, esnek yapıya sahiptir</li>
+          </ul>
+          <strong>Avantajları:</strong>
+          <ul>
+            <li>Suda çabuk kurur</li>
+            <li>Kolay kırışmaz, uzun ömürlü olabilir</li>
+          </ul>
+          <strong>Dezavantajları:</strong>
+          <ul>
+            <li>Doğada çözünmez → mikroplastik problemi</li>
+            <li>Üretimi sırasında fosil yakıt tüketilir</li>
+            <li>Yıkandıkça mikroplastik salınımı yapar</li>
+          </ul>
+          <strong>Sonuç:</strong>
+          <p>Eğer çevreci olmak istiyorsan:<br>%100 organik pamuk, tencel, bambu, yün gibi doğal ve sürdürülebilir kaynakları tercih et<br>Polyester gibi sentetik kumaşlardan yapılan ürünleri daha uzun süre kullanmaya çalış</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-title">3. Kıyafetlerimizi Nasıl Daha Uzun Ömürlü Kullanırız?</button>
+        <div class="accordion-content" style="display:none;">
+          <strong>✅ Bilinçli Tüketim ve Bakım Önerileri:</strong>
+          <ul>
+            <li>Az Yıka, Soğukta Yıka<br>Yüksek sıcaklık → kumaş liflerine zarar verir<br>Gereksiz yıkama ömrü kısaltır<br>Düşük sıcaklık = az enerji + daha uzun ömür</li>
+            <li>Ters Çevirip Yıka<br>Renk solmasını ve sürtünmeyi azaltır</li>
+            <li>Kaliteli Ürün Seç<br>Ucuz ürün 3 yıkamada dağılır<br>Bir kere kaliteli almak, uzun vadede hem doğa hem cüzdan için kazanç</li>
+            <li>Dikiş Öğren / Tamir Et / Yamala<br>Kendi kıyafetini tamir et → “kıyafetine karakter kat”</li>
+            <li>Saklama Koşullarına Dikkat Et<br>Güneşte bırakma → renk solar<br>Askıya asma (bazı kumaşlar için) → form bozulur</li>
+            <li>Dönüştür & Paylaş<br>Kullanmadığını başkasına ver<br>Geri dönüşüm kutularına bağışla<br>Eski t-shirt → temizlik bezi<br>Eskimiş kot → çanta, minder kılıfı</li>
+            <li>Etiketleri Oku<br>Kumaş karışımı ne? Nasıl yıkanmalı?<br>Bazı kumaşlar kurutucuda çekebilir (örneğin yün)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  </section>
+
+  <section id="donustur">
+    <h2>Dönüştür & Bağışla</h2>
+    
+    <p>Kargo ile gönderim seçeneği mevcuttur.</p>
+    <form>
+      <div class="form-group">
+        <label for="name">Adınız Soyadınız</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">E-posta</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="clothes">Bağışlamak istediğiniz kıyafetler</label>
+        <textarea id="clothes" name="clothes" rows="3" required></textarea>
+      </div>
+      <button type="submit">Bağışla</button>
+    </form>
+  </section>
+
+
+  <section id="rehber">
+    <h2>Sürdürülebilir Moda Rehberi</h2>
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-title">Türkiye’den Örnek Markalar</button>
+        <div class="accordion-content" style="display:none;">
+          <table style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="background:#f0f0f0;">
+                <th>Marka</th>
+                <th>Nerede / Genel Bilgi</th>
+                <th>Etik / Sürdürülebilir Uygulamaları</th>
+                <th>Öne Çıkan Özellik / Not</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>EkoDoku</strong></td><td>Ankara, Türkiye</td><td>Kadın ve genç işgücünü destekleyen bir kooperatif; etik üretim, sürdürülebilir yaşam ilkeleri üzerine hareket ediyor.</td><td>Kooperatif yapısı sayesinde toplumsal boyutu güçlü.</td></tr>
+              <tr><td><strong>OhSevenDays</strong></td><td>İstanbul / Türkiye</td><td>Hızlı modanın atıklarını kullanarak “slow fashion” yaklaşımı ile üretim yapıyor.</td><td>Atık kumaşları yeniden değerlendirme açısından dikkat çekici.</td></tr>
+              <tr><td><strong>Mah‑Roc</strong></td><td>Türkiye</td><td>Aşırı üretimi bırakıp çevresel duyarlılığa odaklanıyor; açık politika yaklaşımı ile tanınıyor.</td><td>Markanın vizyonu “az ama kaliteli” yaklaşımı destekliyor.</td></tr>
+              <tr><td><strong>Sculpture</strong></td><td>Türkiye</td><td>Doğaya saygılı teknikleri, şeffaf üretim süreçleri ve etik yaklaşımı ön planda tutuyor.</td><td>Geleneksel tekniklerle çağdaş tasarımı harmanlama iddiası var.</td></tr>
+              <tr><td><strong>Darwin’s Botanicals</strong></td><td>Türkiye</td><td>Bitki atıkları (mevsimini tamamlamış meyve, çiçek, yaprak gibi) ile doğal boya üretimi kullanıyor.</td><td>Asıl dikkat çeken: boya hammaddesini “atık”lardan üretme fikri.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-title">🌐 Dünya Çapında Örnek Markalar / Girişimler</button>
+        <div class="accordion-content" style="display:none;">
+          <table style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="background:#f0f0f0;">
+                <th>Marka / Girişim</th>
+                <th>Ülke / Bölge</th>
+                <th>Etik / Sürdürülebilir Uygulamalar</th>
+                <th>Öne Çıkan Özellik / Not</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>We aRe SpinDye</strong></td><td>İsveç</td><td>Sentetik tekstillerin boyanmasında geleneksel boyama süreçlerine göre çok daha az su ve kimyasal kullanan teknoloji geliştiriyor.</td><td>Özellikle teknik kumaşlarda sürdürülebilir boya teknolojisiyle öne çıkıyor.</td></tr>
+              <tr><td><strong>Pangaia</strong></td><td>Uluslararası / merkez İtalya</td><td>Bitkisel kaynaklı materyaller, inovatif sürdürülebilir kumaş teknolojileri kullanıyor; gıda atıklarından boya üretme gibi projelere de yöneliyor.</td><td>Moda + materyal inovasyonu kavramlarını birleştiriyor.</td></tr>
+              <tr><td><strong>Lucy Tammam</strong></td><td>Birleşik Krallık / Orta Doğu</td><td>Organik sertifikalı boyalar kullanıyor ve düşük hacimli, couture üretim yaklaşımıyla hareket ediyor.</td><td>“Slow couture” yaklaşımıyla dikkat çekiyor — her parça özel, her tasarım dikkatli üretim.</td></tr>
+              <tr><td><strong>Anaak</strong></td><td>Hindistan / uluslararası pazarda</td><td>Geleneksel el dokuma teknikleri, doğal boyama, kadın zanaatkârlarla çalışmayı benimseyen bir marka.</td><td>El işi, doğal boya kullanımı ve toplumsal etki açısından güçlü bir marka.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  <script>
+    // Akordeon aç/kapa fonksiyonu (rehber için de çalışır)
+    document.querySelectorAll('.accordion-title').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const content = this.nextElementSibling;
+        if (content.style.display === 'block') {
+          content.style.display = 'none';
+        } else {
+          content.style.display = 'block';
+        }
+      });
+    });
+  </script>
+  </section>
+</body>
+</html>
